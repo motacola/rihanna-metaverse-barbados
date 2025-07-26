@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Scroll spy to highlight active nav link
   const sections = document.querySelectorAll('section[id]');
   // Select both desktop and mobile navigation links
-  const navLinks = document.querySelectorAll('.main-nav .nav-link, .mobile-menu a[href^="#"]');
+  const navLinks = document.querySelectorAll('.main-nav .nav-link, .mobile-menu a');
 
   function onScroll() {
     const scrollPos = window.scrollY + 100; // offset for fixed header
@@ -39,4 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.addEventListener('scroll', onScroll);
   onScroll();
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  });
 });
