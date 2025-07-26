@@ -1,0 +1,52 @@
+/*
+ * Base styles for the site
+ */
+
+/* Colour palette */
+:root {
+  --clr-primary: #ec4899; /* pink */
+  --clr-secondary: #9333ea; /* purple */
+  --clr-dark: #0b0116; /* near black background */
+  --clr-light: #ffffff;
+  --clr-muted: #d1d5db; /* light grey */
+  --clr-gradient-start: #311d61; /* gradient start for sections */
+  --clr-gradient-end: #4f1c71; /* gradient end for sections */
+  --max-width: 1200px;
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  line-height: 1.6;
+  /* Prevent horizontal scrollbars from accidental overflow */
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--clr-secondary);
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}

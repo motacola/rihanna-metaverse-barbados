@@ -1,0 +1,109 @@
+/*
+ * Component styles for the site
+ */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  color: var(--clr-light);
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--clr-secondary), var(--clr-primary));
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+}
+.btn-outline:hover {
+  background: var(--clr-primary);
+  color: var(--clr-dark);
+}
+
+/* Cards */
+.card {
+  background: #1e1037;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--clr-primary);
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+.card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-muted);
+}
+.card ul li i {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  color: var(--clr-primary);
+}
+.card .card-btn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  color: var(--clr-light);
+  transition: background 0.3s ease;
+}
+.card .card-btn:hover {
+  background: linear-gradient(90deg, var(--clr-secondary), var(--clr-primary));
+}
+
+/* Back to Top button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
