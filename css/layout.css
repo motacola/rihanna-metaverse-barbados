@@ -1,0 +1,231 @@
+/*
+ * Layout styles for the site
+ */
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(11, 1, 22, 0.8);
+  backdrop-filter: blur(6px);
+}
+header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+header .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.main-nav .nav-link {
+  font-size: 0.95rem;
+  color: var(--clr-light);
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+  color: var(--clr-primary);
+}
+.header-cta {
+  display: none;
+  gap: 0.75rem;
+}
+@media (min-width: 1024px) {
+  .header-cta {
+    display: flex;
+  }
+}
+
+/* Mobile navigation */
+header .mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1e1037;
+  width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+header .mobile-menu.open {
+  display: block;
+}
+header .mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header .mobile-menu ul li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--clr-light);
+  transition: background 0.2s ease-in-out;
+}
+header .mobile-menu ul li a:hover {
+  background: var(--clr-primary);
+}
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block !important; /* Use important to override inline style */
+    cursor: pointer;
+  }
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-light);
+  background: url('../hero.png') no-repeat center/cover;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(83,0,83,0.6));
+}
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  padding: 2rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: var(--clr-muted);
+}
+.hero .tagline {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  margin-bottom: 2rem;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--clr-light);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -5px); }
+}
+
+/* Sections */
+section {
+  padding: 5rem 0;
+}
+.section-dark {
+  background: var(--clr-dark);
+}
+.section-gradient {
+  background: linear-gradient(180deg, var(--clr-gradient-start) 0%, var(--clr-gradient-end) 100%);
+}
+.section-light {
+  background: #100825;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--clr-muted);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+footer {
+  background: #0a0219;
+  padding: 3rem 0;
+  color: var(--clr-muted);
+  font-size: 0.85rem;
+}
+footer .footer-grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  footer .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+footer h5 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--clr-light);
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer ul li {
+  margin-bottom: 0.4rem;
+}
+footer ul li a {
+  color: var(--clr-muted);
+  transition: color 0.3s ease;
+  font-size: 0.85rem;
+}
+footer ul li a:hover {
+  color: var(--clr-primary);
+}
+.social-icons {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.social-icons a {
+  color: var(--clr-primary);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--clr-secondary);
+}
