@@ -126,8 +126,13 @@ header .logo {
 
 /* Call to action buttons in the header */
 .header-cta {
-  display: flex;
+  display: none;
   gap: 0.75rem;
+}
+@media (min-width: 1024px) {
+  .header-cta {
+    display: flex;
+  }
 }
 .btn {
   display: inline-flex;
@@ -909,38 +914,27 @@ footer ul li a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  header nav ul {
+@media (max-width: 1024px) {
+  .main-nav {
     display: none;
   }
-  header .menu-toggle {
-    display: block;
+  .menu-toggle {
+    display: block !important; /* Use important to override inline style */
     cursor: pointer;
-  }
-  header .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #1e1037;
-    width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  header .mobile-menu.open {
-    display: block;
   }
   header .mobile-menu ul {
     list-style: none;
-    padding: 1rem;
-  }
-  header .mobile-menu ul li {
-    margin-bottom: 0.5rem;
+    padding: 0;
+    margin: 0;
   }
   header .mobile-menu ul li a {
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
     color: var(--clr-light);
+    transition: background 0.2s ease-in-out;
+  }
+  header .mobile-menu ul li a:hover {
+    background: var(--clr-primary);
   }
 }
 
